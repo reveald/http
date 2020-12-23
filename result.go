@@ -44,12 +44,13 @@ func NewResult(r *reveald.Result) *Result {
 	for key, aggs := range r.Aggregations {
 		var b []*Bucket
 		for _, bs := range aggs {
-			request.Set(key, fmt.Sprintf("%v", bs.Value))
+			c := copyRequest(request)
+			c.Set(key, fmt.Sprintf("%v", bs.Value))
 
 			b = append(b, &Bucket{
 				Value: bs.Value,
 				Count: bs.HitCount,
-				Query: makeRequestURL(request),
+				Query: makeRequestURL(c),
 			})
 		}
 
@@ -90,7 +91,7 @@ func NewPagination(r *reveald.Result) *Pagination {
 		Current: current,
 	}
 
-	request := r.Request()
+	request := copyRequest(r.Request())
 
 	if current > 1 {
 		request.Set("offset", fmt.Sprintf("%d", r.Pagination.Offset-r.Pagination.PageSize))
@@ -115,7 +116,7 @@ func NewSortOptions(r *reveald.Result) []*SortOption {
 		return nil
 	}
 
-	request := r.Request()
+	request := copyRequest(r.Request())
 
 	var options []*SortOption
 	for _, v := range r.Sorting.Options {
@@ -130,6 +131,17 @@ func NewSortOptions(r *reveald.Result) []*SortOption {
 	}
 
 	return options
+}
+
+func copyRequest(r *reveald.Request) *reveald.Request {
+	params := r.GetAll()
+
+	c := reveald.NewRequest()
+	for _, p := range params {
+		c.Append(p)
+	}
+
+	return c
 }
 
 func makeRequestURL(r *reveald.Request) string {
