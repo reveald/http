@@ -10,6 +10,7 @@ type HTTPAPI struct {
 	backend reveald.Backend
 	routes  []*Route
 	logger  Logger
+	reader  ParamReader
 }
 
 type Option func(*HTTPAPI)
@@ -20,12 +21,32 @@ func WithLogger(l Logger) Option {
 	}
 }
 
+type ParamReader = func(*http.Request) ([]reveald.Parameter, error)
+
+func WithParamReader(readers ...ParamReader) Option {
+	return func(h *HTTPAPI) {
+		h.reader = func(r *http.Request) ([]reveald.Parameter, error) {
+			params := []reveald.Parameter{}
+			for _, reader := range readers {
+				ps, err := reader(r)
+				if err != nil {
+					return nil, err
+				}
+
+				params = append(params, ps...)
+			}
+			return params, nil
+		}
+	}
+}
+
 func New(backend reveald.Backend, opts ...Option) *HTTPAPI {
 	var routes []*Route
 	h := &HTTPAPI{
 		backend: backend,
 		routes:  routes,
 		logger:  &noopLogger{},
+		reader:  QueryReader,
 	}
 
 	for _, opt := range opts {
@@ -45,7 +66,7 @@ func (h *HTTPAPI) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	for _, route := range h.routes {
 		var handler http.Handler
-		handler = queryResultHandler(h.backend, route, h.logger)
+		handler = queryResultHandler(h.backend, route, h.logger, h.reader)
 
 		for _, middleware := range route.middleware {
 			handler = middleware(handler)

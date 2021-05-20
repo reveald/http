@@ -8,7 +8,7 @@ import (
 	"github.com/reveald/reveald"
 )
 
-func queryResultHandler(b reveald.Backend, r *Route, l Logger) http.HandlerFunc {
+func queryResultHandler(b reveald.Backend, r *Route, l Logger, read ParamReader) http.HandlerFunc {
 	endpoint := reveald.NewEndpoint(b,
 		reveald.WithIndices(r.indices...))
 
@@ -18,14 +18,14 @@ func queryResultHandler(b reveald.Backend, r *Route, l Logger) http.HandlerFunc 
 	}
 
 	return func(w http.ResponseWriter, r *http.Request) {
-		request, err := makeRequest(r)
+		params, err := read(r)
 		if err != nil {
 			l.Errorf("request failed: %v", err)
 			w.WriteHeader(400)
 			return
 		}
 
-		result, err := endpoint.Execute(context.Background(), request)
+		result, err := endpoint.Execute(context.Background(), reveald.NewRequest(params...))
 		if err != nil {
 			l.Errorf("searching failed: %v", err)
 			w.WriteHeader(400)
@@ -48,15 +48,4 @@ func queryResultHandler(b reveald.Backend, r *Route, l Logger) http.HandlerFunc 
 			return
 		}
 	}
-}
-
-func makeRequest(r *http.Request) (*reveald.Request, error) {
-	q := reveald.NewRequest()
-
-	for k, v := range r.URL.Query() {
-		p := reveald.NewParameter(k, v...)
-		q = q.Append(p)
-	}
-
-	return q, nil
 }
