@@ -2,6 +2,7 @@ package http
 
 import (
 	"fmt"
+	"math"
 	"strings"
 	"time"
 
@@ -76,7 +77,7 @@ func NewPagination(r *reveald.Result) *Pagination {
 		return nil
 	}
 
-	count := int(r.TotalHitCount / int64(r.Pagination.PageSize))
+	count := int(math.Ceil(float64(r.TotalHitCount) / float64(r.Pagination.PageSize)))
 	if count < 1 {
 		count = 1
 	}
