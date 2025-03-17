@@ -121,7 +121,7 @@ func NewSortOptions(r *reveald.Result) []*SortOption {
 
 	var options []*SortOption
 	for _, v := range r.Sorting.Options {
-		request.Set(r.Sorting.Param, v.Name)
+		request.Set(r.Sorting.Param, v.Value)
 
 		options = append(options, &SortOption{
 			Name:      v.Name,
