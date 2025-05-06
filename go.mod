@@ -4,11 +4,11 @@ go 1.24
 
 toolchain go1.24.0
 
-require github.com/reveald/reveald v0.0.0-20250423100842-c6ccab95df25
+require github.com/reveald/reveald v0.0.0-20250506123849-b53e3c76c65e
 
 require (
-	github.com/elastic/elastic-transport-go/v8 v8.6.1 // indirect
-	github.com/elastic/go-elasticsearch/v8 v8.17.1 // indirect
+	github.com/elastic/elastic-transport-go/v8 v8.7.0 // indirect
+	github.com/elastic/go-elasticsearch/v8 v8.18.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
