@@ -4,7 +4,7 @@ go 1.24
 
 toolchain go1.24.0
 
-require github.com/reveald/reveald v0.0.0-20250506123849-b53e3c76c65e
+require github.com/reveald/reveald v0.0.0-20250507080500-25b6c34073c2
 
 require (
 	github.com/elastic/elastic-transport-go/v8 v8.7.0 // indirect

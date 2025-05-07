@@ -81,6 +81,8 @@ github.com/reveald/reveald v0.0.0-20250423100842-c6ccab95df25 h1:Y9X5NVlVA6GsYYr
 github.com/reveald/reveald v0.0.0-20250423100842-c6ccab95df25/go.mod h1:IDDWcfWDFtlGM1RuSMUYIj/aToykVuvG3ZWdaSbVP/Y=
 github.com/reveald/reveald v0.0.0-20250506123849-b53e3c76c65e h1:Qk+TmQVcOU18AapixR7JZCyouaOMq+tnLaHvmwoz89U=
 github.com/reveald/reveald v0.0.0-20250506123849-b53e3c76c65e/go.mod h1:ytObVrwglym6sADPvadJ5TRryMHADkTbXlaKxl8iKnA=
+github.com/reveald/reveald v0.0.0-20250507080500-25b6c34073c2 h1:233M9dK09xE0+oll2F+Pl00grd4Ihb4alIn/jNS4cSo=
+github.com/reveald/reveald v0.0.0-20250507080500-25b6c34073c2/go.mod h1:ytObVrwglym6sADPvadJ5TRryMHADkTbXlaKxl8iKnA=
 github.com/shirou/gopsutil/v3 v3.23.12 h1:z90NtUkp3bMtmICZKpC4+WaknU1eXtp5vtbQ11DgpE4=
 github.com/shirou/gopsutil/v3 v3.23.12/go.mod h1:1FrWgea594Jp7qmjHUUPlJDTPgcsb9mGnXDxavtikzM=
 github.com/shoenig/go-m1cpu v0.1.6 h1:nxdKQNcEB6vzgA2E2bvzKIYRuNj7XNJ4S/aRSwKzFtM=
