@@ -73,6 +73,8 @@ github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c h1:ncq/mPwQF
 github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c/go.mod h1:OmDBASR4679mdNQnz2pUhc2G8CO2JrUAVFDRBDP/hJE=
 github.com/reveald/reveald v0.0.0-20250526103913-edf9dae42c04 h1:nG9hluft7g477n9fNncTyVRVDUZbUJNU+IKADsN/tM0=
 github.com/reveald/reveald v0.0.0-20250526103913-edf9dae42c04/go.mod h1:ytObVrwglym6sADPvadJ5TRryMHADkTbXlaKxl8iKnA=
+github.com/reveald/reveald v0.0.0-20250526120459-08c9ac46f889 h1:gAz56sAM/rA1tD+90cdQjdh9QZmHgTxq7wQItKr4ktM=
+github.com/reveald/reveald v0.0.0-20250526120459-08c9ac46f889/go.mod h1:ytObVrwglym6sADPvadJ5TRryMHADkTbXlaKxl8iKnA=
 github.com/shirou/gopsutil/v3 v3.23.12 h1:z90NtUkp3bMtmICZKpC4+WaknU1eXtp5vtbQ11DgpE4=
 github.com/shirou/gopsutil/v3 v3.23.12/go.mod h1:1FrWgea594Jp7qmjHUUPlJDTPgcsb9mGnXDxavtikzM=
 github.com/shoenig/go-m1cpu v0.1.6 h1:nxdKQNcEB6vzgA2E2bvzKIYRuNj7XNJ4S/aRSwKzFtM=
