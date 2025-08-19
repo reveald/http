@@ -42,9 +42,9 @@ func NewResult(r *reveald.Result) *Result {
 	request := r.Request()
 
 	buckets := make(map[string][]*Bucket)
-	for key, aggs := range r.Aggregations {
+	for key, agg := range r.Aggregations {
 		var b []*Bucket
-		for _, bs := range aggs {
+		for _, bs := range agg {
 			c := copyRequest(request)
 			c.Set(key, fmt.Sprintf("%v", bs.Value))
 
@@ -121,7 +121,7 @@ func NewSortOptions(r *reveald.Result) []*SortOption {
 
 	var options []*SortOption
 	for _, v := range r.Sorting.Options {
-		request.Set(r.Sorting.Param, v.Name)
+		request.Set(r.Sorting.Param, v.Value)
 
 		options = append(options, &SortOption{
 			Name:      v.Name,
