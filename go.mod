@@ -1,14 +1,12 @@
 module github.com/reveald/http
 
-go 1.24
+go 1.25
 
-toolchain go1.24.0
-
-require github.com/reveald/reveald v0.0.0-20250528110356-fae4c654199d
+require github.com/reveald/reveald v1.0.0
 
 require (
 	github.com/elastic/elastic-transport-go/v8 v8.7.0 // indirect
-	github.com/elastic/go-elasticsearch/v8 v8.18.0 // indirect
+	github.com/elastic/go-elasticsearch/v8 v8.19.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
