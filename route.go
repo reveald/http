@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	"github.com/reveald/reveald"
+	"github.com/reveald/reveald/v2"
 )
 
 type Route struct {
