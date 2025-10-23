@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/reveald/reveald"
+	"github.com/reveald/reveald/v2"
 )
 
 func queryResultHandler(b reveald.Backend, r *Route, l Logger, read ParamReader) http.HandlerFunc {

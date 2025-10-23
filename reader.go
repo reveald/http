@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/reveald/reveald"
+	"github.com/reveald/reveald/v2"
 )
 
 func QueryReader(r *http.Request) ([]reveald.Parameter, error) {

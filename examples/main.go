@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	revealdhttp "github.com/reveald/http"
-	"github.com/reveald/reveald"
+	revealdhttp "github.com/reveald/http/v2"
 	"github.com/reveald/reveald/featureset"
+	"github.com/reveald/reveald/v2"
 )
 
 func main() {
