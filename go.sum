@@ -75,6 +75,8 @@ github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c h1:ncq/mPwQF
 github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c/go.mod h1:OmDBASR4679mdNQnz2pUhc2G8CO2JrUAVFDRBDP/hJE=
 github.com/reveald/reveald/v2 v2.0.0 h1:4ZeE6BrwTVDyLcBr9LGBgU4YYodt0/vvVcCGEPF39fc=
 github.com/reveald/reveald/v2 v2.0.0/go.mod h1:hepBgKMfCCtxSwK7WGkJ7FEOxUvVdG4chCbGCJZlfEA=
+github.com/reveald/reveald/v2 v2.0.1-0.20251024072542-73e0318b2854 h1:+yrRkkLbbS3cc/pO62Z1+iEpMr3d44TMiysjOlIh6uA=
+github.com/reveald/reveald/v2 v2.0.1-0.20251024072542-73e0318b2854/go.mod h1:hepBgKMfCCtxSwK7WGkJ7FEOxUvVdG4chCbGCJZlfEA=
 github.com/shirou/gopsutil/v4 v4.25.1 h1:QSWkTc+fu9LTAWfkZwZ6j8MSUk4A2LV7rbH0ZqmLjXs=
 github.com/shirou/gopsutil/v4 v4.25.1/go.mod h1:RoUCUpndaJFtT+2zsZzzmhvbfGoDCJ7nFXKJf8GqJbI=
 github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=
